@@ -1,0 +1,97 @@
+// -*- mode: json -*-
+
+{
+	"layer": "top",
+	"position": "top",
+  "height": 30,
+  "margin": "0 0 0 0",
+
+	"modules-left": [
+		"hyprland/workspaces"
+	],
+	"modules-center": [
+		"clock#1",
+		"clock#2",
+		"clock#3",
+	],
+	"modules-right": [
+		"backlight",
+		"battery",
+		"wireplumber",
+		"network",
+		"bluetooth",
+		"tray",
+	],
+
+  "hyprland/workspaces": {
+    "all-outputs": true,
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+        "urgent": "",
+        "default": ""
+    }
+  },
+	"clock#1": {
+		"format": "{:%a}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:%I:%M}",
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{:%m-%d}",
+		"tooltip": false
+	},
+	"wireplumber": {
+		"format": "{icon} {volume}%",
+		"format-muted": "󰝟",
+		"format-icons": ["","", ""]
+	},
+	"network": {
+		"format-wifi": "",
+		"format-ethernet": "",
+		"format-disconnected": "⚠",
+		"tooltip-format": "{ifname} via {gwaddr}",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
+		"tooltip-format-ethernet": "{ifname} ",
+	    "tooltip-format-disconnected": "Disconnected",
+	},
+	"bluetooth": {
+	"format": "",
+	"format-disabled": "󰂲",
+	"format-off": "󰂲",
+	"format-connected": "󰂱",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"on-click": "sleep 0.1 && hyprctl dispatch exec '[float; size 1000 400; center; pin] kitty bluetuith'"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon}  {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"format-charging": "󱐋 {capacity}%",
+		"format-plugged": "󰚥 {capacity}%"
+	},
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{icon} {percent}%",
+		"format-icons": ["󰃞", "󰃟", "󰃠"]
+	},
+	"tray": {
+		"icon-size": 20,
+		"spacing": 7
+	}
+}

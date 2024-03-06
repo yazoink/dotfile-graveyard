@@ -1,0 +1,28 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["wireplumber", "tray"],
+    },
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{icon}"
+        "format-icons": {
+            "urgent": ""
+            "default": ""
+        }
+    },
+    "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": ["", "󰕾", ""]
+    },
+    "tray": {
+    "icon-size": 21,
+    "spacing": 10
+    },
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    }
+}

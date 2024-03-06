@@ -1,0 +1,103 @@
+@import '/home/gene/.cache/wal/colors-waybar.css';
+
+* {
+  font-family: CaskaydiaCove Nerd Font;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#waybar {
+  background-color: transparent;
+}
+
+tooltip {
+  color: @foreground;
+  background-color: @background;
+}
+
+#workspaces{
+	margin-left: 0.5em;
+	border-radius: 1em;
+}
+
+#workspaces button {
+	color: @color1;  
+	padding: 0 0.5em 0 0.4em;
+    background-color: transparent;
+}
+
+#workspaces button.active {
+	color: @foreground;
+    background-color: transparent;
+}
+
+#clock{
+	color: @foreground;
+}
+
+#clock.1{
+	border-radius: 1em 0 0 1em;
+}
+
+#clock.3{
+	border-radius: 0 1em 1em 0;
+}
+
+#battery {
+	color: @color3;
+}
+
+#backlight {
+	color: @color2;
+	border-radius: 1em 0 0 1em ;
+}
+
+#wireplumber {
+	color: @color4;
+}
+
+#wireplumber.muted{
+	padding: 0 0.2em;
+}
+
+#network {
+	color: @color5;
+}
+
+#network.disconnected {
+	color: @color6;
+}
+
+#bluetooth {
+	color: @color7;
+	border-radius: 0 1em 1em 0;
+	margin-right: 0.5em;
+}
+
+#tray{
+	border-radius: 1em;
+	margin-right: 0.5em;
+}
+
+#clock,
+#cpu,
+#battery,
+#backlight,
+#wireplumber,
+#network,
+#bluetooth,
+#tray{
+	padding: 0 0.5em;
+}
+
+#workspaces,
+#clock,
+#cpu,
+#battery,
+#backlight,
+#wireplumber,
+#network,
+#bluetooth,
+#tray{
+	background: @background;
+}

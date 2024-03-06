@@ -1,0 +1,44 @@
+#!/bin/bash
+
+set_theme () {
+    wpg -s "$1"
+    sed -i "/swaybg/d" ~/.local/bin/wallpaper
+    echo "swaybg -i "$2" -m fill" >> ~/.local/bin/wallpaper
+    rm ~/.config/qt5ct/colors/gene_Downloads_QT5CTPywalDark.conf
+    cp ~/.config/wpg/templates/gene_Downloads_QT5CTPywalDark.conf ~/.config/qt5ct/colors/gene_Downloads_QT5CTPywalDark.conf
+    genmako
+    pywal-discord -p ~/.config/VencordDesktop/VencordDesktop/themes
+    killall waybar && waybar & disown
+    source ~/.cache/wal/colors-river.sh
+    riverctl background-color $background
+    riverctl border-color-focused $focused
+    riverctl border-color-unfocused $unfocused
+    notify-send "Theme changed!"
+    killall swaybg
+    riverctl spawn ~/.local/bin/wallpaper &
+    genzathurarc
+    printf "\ncopy content above to ~/.config/zathura/zathurarc\n"
+}
+
+change_theme () {
+    if [[ -f "$1" ]]; then
+        if [[ "${1:0:1}" == "/" ]] || [[ "${1:0:1}" == "~" ]]; then
+            file_name="$(echo "${1##*/}")"
+            file_path="$(echo "$1")"
+        else
+            file_name="$(echo "$1")"
+            file_path="$(pwd)"/"$file_name"
+        fi
+        wpg -a "$1"
+        set_theme "$file_name" "$file_path"
+    else
+        printf "The image provided does not exist.\n"
+        exit 1
+    fi
+}
+
+case $1 in
+    "") printf "Please provide the path to an image.\n" && exit 1 ;;
+    -h | --h) printf "theme <full path to wallpaper - no spaces>" ;;
+    *) echo $1 && change_theme "$1" && exit 0;;
+esac

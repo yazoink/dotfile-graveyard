@@ -1,0 +1,62 @@
+@import '/home/gene/.cache/wal/colors-waybar.css';
+
+* {
+  font-family: Cascadia Code, "Font Awesome 6 Free", "Font Awesome 6 Brands";
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#waybar {
+  background-color: transparent;
+}
+
+tooltip {
+  color: @foreground;
+  background-color: @background;
+}
+
+#wireplumber,
+#tray,
+#clock,
+#window,
+#workspaces{
+	margin-left: 0.5em;
+	padding: 0.3em 0.8em;
+	margin-right: 0.5em;
+	border-radius: 1em;
+	background: @background;
+}
+
+#workspaces button {
+	color: @color1;  
+	padding: 0 0.4em 0 0.3em;
+    background-color: transparent;
+}
+
+#workspaces button.active {
+	color: @foreground;
+    background-color: transparent;
+}
+
+
+#wireplumber {
+	color: @color4;
+}
+
+#wireplumber.muted{
+	padding: 0 0.2em;
+}
+
+#network {
+	color: @color5;
+}
+
+#network.disconnected {
+	color: @color6;
+}
+
+#tray{
+	border-radius: 1em;
+	margin-right: 0.5em;
+}
+
