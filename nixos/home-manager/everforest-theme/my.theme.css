@@ -1,0 +1,36 @@
+/**
+ * @name everforest
+ * @description Everforest theme for Discord
+ * @author yazoink
+ * @version 1
+ */
+
+@import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css);
+
+:root {
+	--font:	Cascadia Code; /*  General Font  */
+	--settingsicons: 1; /*  Use Settings Icons - Settings: 1 yes, 0 no  */
+	
+	--accentcolor: 167, 192, 128;
+	--accentcolor2: 230, 152, 117;
+	--linkcolor: 167, 192, 128;
+	--mentioncolor: 167, 192, 128;
+	--successcolor: 127, 187, 179;
+	--warningcolor: 230, 152, 117;
+	--dangercolor: 230, 126, 128;
+	
+	--textbrightest: 211, 198, 170;
+	--textbrighter: 211, 198, 170;
+	--textbright: 211, 198, 170;
+	--textdark: 157, 169, 160;
+	--textdarker: 157, 169, 160;
+	--textdarkest: 157, 169, 160;
+	
+	--backgroundaccent: 61, 72, 77; /* #32302f */
+	--backgroundprimary: 47, 56, 62; /* #282828 */
+	--backgroundsecondary: 61, 72, 77; /* #32302f */
+	--backgroundsecondaryalt: 61, 72, 77; /* #32302f */
+	--backgroundtertiary: 47, 56, 62; /* #282828 */
+	--backgroundfloating: 47, 56, 62; /* #282828 */
+
+}
